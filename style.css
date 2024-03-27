@@ -1,0 +1,152 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+.open-btn {
+  height: 39px;
+  border-radius: 5px;
+  padding: 8px 15px;
+  background-color: rgba(165, 199, 249, 1);
+  font-size: 20px;
+  color: rgba(255, 255, 255, 1);
+  line-height: 23.44px;
+  position: absolute;
+  left: 30px;
+  top: 30.5px;
+  cursor: pointer;
+}
+.background {
+  background-color: rgba(192, 219, 217, 1);
+}
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+.blocks {
+  height: 100px;
+  background-color: rgba(127, 175, 246, 1);
+  position: relative;
+}
+.main-block-top {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 390px 590px 160px;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  height: 411px;
+  background-color: rgba(179, 249, 90, 1);
+}
+
+.block {
+  background-color: rgba(138, 209, 145, 1);
+  height: 198px;
+  position: relative;
+}
+.block-large {
+  grid-column: span 2;
+}
+.block::after {
+  content: attr(data-number);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 62px;
+  line-height: 62.11px;
+  text-align: center;
+  font-size: 53px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.main-block-bottom {
+  background-color: rgba(136, 181, 191, 1);
+  padding: 30px;
+  gap: 30px;
+  height: 259px;
+  margin-top: 15px;
+}
+
+.inner-block {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: 30px;
+}
+
+.inner-item {
+  background-color: rgba(13, 137, 176, 1);
+  width: 255px;
+  height: 199px;
+}
+.blocks-bottom {
+  margin-top: 100px;
+}
+
+/* попап */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  overflow-y: auto;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-title {
+  font-size: 53px;
+  line-height: 62.11px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 43px;
+  height: 39px;
+  cursor: pointer;
+  background-color: rgba(127, 175, 246, 1);
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
